@@ -4,6 +4,16 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css">
 		<link rel="stylesheet" type="text/css" href="css/JSONTree.css">
 		<script src="js/d3.v3.js" type="text/javascript" charset="utf-8"></script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126210376-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-126210376-2');
+</script>
+
 		<script type="text/javascript">
 			window.onLoad = (function() {
 				if (!Array.prototype.forEach) {
@@ -31,8 +41,10 @@
 		<div class="center">
 			<br><br>
 			<span>Enter your JSON file below</span>
+		
 			<label for="jsoncontent" style="display:none;">Json</label>
 			<textarea id="jsoncontent"></textarea>
+			<p><span>All processing is done within the browser, the JSON you paste here is not uploaded to the internet </span></p>	
 			<button type="button" id="visualize">Visualize</button>
 			<label>
 				Vertical:
