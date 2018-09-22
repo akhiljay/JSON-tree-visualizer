@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>JSONTree</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="css/JSONTree.css">
+		<script src="js/d3.v3.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onLoad = (function() {
+				if (!Array.prototype.forEach) {
+					Array.prototype.forEach = function(fun /*, thisp*/ ) {
+						var len = this.length >>> 0;
+						if (typeof fun != "function") {
+							throw new TypeError();
+						}
+
+						var thisp = arguments[1];
+						for (var i = 0; i < len; i++) {
+							if (i in this) {
+								fun.call(thisp, this[i], i, this);
+							}
+						}
+					};
+				}
+			})();
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>JSON To Tree Visualizer (using D3.v3.js)</h1>
+		</header>
+		<div class="center">
+			<br><br>
+			<span>Enter your JSON file below</span>
+			<label for="jsoncontent" style="display:none;">Json</label>
+			<textarea id="jsoncontent"></textarea>
+			<button type="button" id="visualize">Visualize</button>
+			<label>
+				Vertical:
+				<input type="radio" name="vertical_horizontal" value="vertical" />
+			</label>
+			<label>
+				Horizontal:
+				<input type="radio" name="vertical_horizontal" value="horizontal" checked="true" />
+			</label>
+			<div style="float:right; padding-right: 20px"><em>(Zoom and Drag Available)</em></div>
+			<br><br>
+		<span>TREE visualization</span>
+		</div>
+
+
+		<div id="jsontree" class="center"></div>
+		
+		<script type="text/javascript" src="js/JSONTree.js"></script>
+		<footer class="center">
+				<br><br>
+				<p><span>Github Source:</span></p>
+				<p><span>Maintained by: Akhil Jayaprakash</span></p>
+
+
+		</footer>
+	</body>
+</html>
